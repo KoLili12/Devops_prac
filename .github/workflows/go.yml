@@ -10,19 +10,20 @@ on:
     branches: [ "dev" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-
+    
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
         go-version: '1.20'
-
+    
     - name: Build
-      run: go build -v ./backend
-
+      working-directory: ./backend
+      run: go build -v .
+    
     - name: Test
-      run: go test -v ./backend
+      working-directory: ./backend
+      run: go test -v ./...
