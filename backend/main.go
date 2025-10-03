@@ -42,3 +42,5 @@ package main
          log.Fatal(err)
      }
  }
+
+ // To run the server, use the command: go run main.go
